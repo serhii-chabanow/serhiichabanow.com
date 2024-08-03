@@ -12,7 +12,7 @@ const headingStyles = {
   maxWidth: 320,
 }
 const headingAccentStyles = {
-  color: "#fff",
+  color: "#663399",
 }
 const paragraphStyles = {
   marginBottom: 48,
@@ -140,7 +140,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>
-        Слони, жирафи, ромашки !
+        Вітаю !
         <br />
         <span style={headingAccentStyles}>— ви потрапили на початок розробки сайта Сергія! 🎉🎉🎉</span>
       </h1>
