@@ -1,0 +1,77 @@
+main {
+    display: flex;
+    justify-content: center; /* Центрує контент горизонтально */
+    padding: 4rem 0 3rem 0; /* Відступ зверху і знизу */
+    min-height: 100vh; /* Встановлює мінімальну висоту сторінки */
+  }
+  
+  main > div {
+    max-width: 860px; /* Максимальна ширина контенту */
+  }
+  
+  .first-paragraph {
+    margin-bottom: 2rem; /* Відступ знизу */
+  }
+  
+  .intro-paragraph {
+    width: 80%; /* Займає всю ширину по можливості */
+    margin: 0; /* Центрує параграф */
+  }
+
+  h1 {
+    font-size: 3rem; /* Розмір заголовка */
+    color: var(--color-black); /* Колір тексту заголовка */
+    margin: 1rem 0; /* Видалення стандартних відступів */
+  }
+  
+  p {
+    font-size: 1.2rem; /* Розмір шрифту параграфів */
+    margin: 0; /* Видалення стандартних відступів */
+    color: var(--color-gray-4);
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  
+  .content-block {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Дві колонки: текст та фото */
+    gap: 1rem; /* Відстань між елементами */
+    align-items: start;
+  }
+  
+  .second-paragraph {
+    grid-column: 1 / span 1; /* Другий параграф займає першу колонку */
+  }
+   
+  .photo-block img {
+    width: 400px; /* Ширина зображення */
+    height: 250px; /* Висота зображення */
+    object-fit: cover; /* Обрізає або масштабирує зображення, щоб воно заповнило вказаний розмір */
+    border-radius: 10px; /* Додає невеликий радіус закруглення */
+  }
+  
+  .image-text {
+    font-size: 0.8rem;
+    margin-left: 20px;
+  }
+  
+
+  @media (max-width: 768px) {
+    main {
+      padding: 2rem 0; /* Зменшити відступи зверху і знизу на мобільних пристроях */
+    }
+    
+    .content-block {
+      grid-template-columns: 1fr; /* Одна колонка для мобільних пристроїв */
+    }
+    
+    .photo-block img {
+      width: 100%; /* Зображення буде адаптуватися до ширини контейнера */
+      height: auto; /* Автоматична висота, щоб зберегти пропорції */
+    }
+    
+    .image-text {
+      margin-left: 0; /* Видалити відступ ліворуч для мобільних пристроїв */
+      margin-top: 1rem; /* Додати відступ зверху для мобільних пристроїв */
+    }
+  }

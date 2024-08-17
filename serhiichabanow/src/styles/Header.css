@@ -1,0 +1,84 @@
+/* src/components/Header.css */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Центрує контейнер всередині хедера */
+  height: 84px;
+  background-color: var(--color-black); /* Чорний фон хедера */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 3px solid var(--color-green-dark); /* Лінія внизу хедера */
+  box-shadow: none;
+  font-weight: 600;
+  
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Вирівнює лого і меню */
+  width: 100%;
+  max-width: 860px; /* Встановлює максимальну ширину контейнера */
+  padding: 0 20px; /* Відступи з боків */
+}
+
+.header-left-side {
+  display: flex;
+  align-items: center;
+}
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.header-left-side img {
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 10px; /* Відступ між логотипом і текстом */
+}
+
+.header-left-side h3 {
+  color: var(--color-white); /* Колір тексту */
+  margin: 0;
+}
+
+.header-right-side {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Додаткові стилі для мобільних пристроїв */
+@media (max-width: 900px) {
+  header {
+    position: fixed; /* Фіксує хедер */
+    top: 0; /* Встановлює хедер у верхній частині екрану */
+    right: 0; /* Виправляє позицію хедера праворуч */
+    width: 100%; /* Розтягує хедер на всю ширину екрану */
+    background-color: var(--color-black); /* Встановлює фон хедера */
+    z-index: 1000; /* Забезпечує, щоб хедер був зверху всіх інших елементів */
+  }
+  
+  .header-container {
+    flex-direction: row; /* Лого і меню в один рядок */
+    justify-content: space-between; /* Вирівнює елементи по краям */
+  }
+
+  .header-left-side {
+    flex-grow: 1; /* Забезпечує, що лівий блок займає всю можливу ширину */
+  }
+
+  .header-right-side {
+    flex-grow: 0; /* Фіксує ширину для меню */
+    justify-content: flex-end; /* Вирівнює меню праворуч */
+  }
+
+  .header-left-side h3 {
+    font-size: 18px;
+    margin-left: -10px
+  }
+}

@@ -1,0 +1,107 @@
+/* src/styles.css */
+:root {
+  /* Color Theme */
+  --color-black: #191A19;
+  --color-white: #f9f9f9;
+
+  --color-gray-4: #bbb;
+  --color-gray-7: #2c2c2c;
+  
+  --color-green-dark: #1E5128;
+  --color-green-light: #4E9F3D;
+
+  /* Font Families */
+  --font-family-monospace: "IBM Plex Mono", monospace;
+  --font-family-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-family-nav: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* General Styles */
+body {
+  font-family: var(--font-family-nav);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  padding: 0;
+  max-width: 860px; /* Встановлює максимальну ширину сторінки */
+  margin: 100px auto;
+  -webkit-font-smoothing: antialiased;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  color: var(--color-white);
+}
+
+code, pre {
+  font-family: var(--font-family-monospace);
+}
+
+a {
+  text-decoration:none;
+}
+
+
+
+
+/* Responsive general styles */
+@media (max-width: 900px) {
+  body {
+    max-width: none;
+    padding: 20px; /* Add some padding */
+    overflow-x: hidden; /* Забороняє горизонтальне прокручування */
+  }
+
+  main {
+    padding: 2rem 0 2rem 0; /* Adjust padding */
+  }
+
+  .content-block {
+    grid-template-columns: 1fr; /* Stack text and photo vertically */
+  }
+
+  .second-paragraph {
+    grid-column: 1; /* Make sure paragraph takes full width */
+  }
+
+  .intro-paragraph {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 15px; /* Ширина скролбару */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black); /* Колір фону треку скролбару */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-green-dark); /* Колір скролбару */
+  border-radius: 6px; /* Закруглення кутів скролбару */
+  border: 3px solid var(--color-black); /* Відступ та колір навколо скролбару */
+}
+
+/* Зміна кольору при ховері */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-green-light); /* Колір скролбару при ховері */
+}
+
+/* Mobile Scrollbar */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px; /* Менша ширина скролбару для мобільних пристроїв */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px; /* Менший радіус закруглення */
+  }
+
+  /* Зміна кольору при ховері */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-green-light); /* Колір скролбару при ховері на мобільних пристроях */
+  }
+}

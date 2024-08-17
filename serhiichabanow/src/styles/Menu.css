@@ -1,0 +1,156 @@
+/* src/components/Menu.css */
+
+/* Основні стилі меню */
+nav {
+  background-color: var(--color-black); /* Чорний фон для навігації */
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative;
+}
+
+nav ul li a, .btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  color: var(--color-gray-4); /* Зелений текст */
+  display: inline-block;
+  margin: 5px 10px;
+  border-radius: 10px; /* Додає закруглені кути */
+  transition: background-color 0.3s, color 0.3s; /* Анімація переходу */
+  
+}
+
+/* Ефект при наведенні */
+nav ul li a:hover, .btn:hover {
+  background-color: var(--color-gray-7);
+  color: var(--color-white); /* Чорний текст при наведенні */
+}
+
+/* Випадкове меню */
+nav ul li .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--color-black); /* Чорний фон для випадаючого меню */
+  white-space: nowrap; /* Дозволяє елементам розташовуватись в ряд */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 170%; /* Показує меню під основним елементом */
+  transform: translateX(-54%); /* Центрує меню по відношенню до елемента, на який натискають */
+  border-radius: 10px;
+}
+
+nav ul li .dropdown-content a {
+  color: var(--color-green-light); /* Зелений текст для випадаючого меню */
+  padding: 12px 17px;
+  text-decoration: none;
+  display: inline-block; /* Розташовує посилання в ряд */
+  border-radius: 10px;
+}
+
+nav ul li .dropdown-content a:hover {
+  background-color: var(--color-green-light); /* Зелений фон при наведенні на випадаючі елементи */
+  color: var(--color-black); /* Чорний текст при наведенні */
+}
+
+nav ul li .dropdown-content.show {
+  display: block;
+}
+
+
+
+/* Mobile Styles */
+
+@media (max-width: 900px) {
+  nav {
+    position: fixed; /* Фіксує навігацію */
+    top: 0; /* Встановлює меню у верхній частині екрана */
+    right: 0; /* Виправляє позицію меню праворуч */
+    width: 100%; /* Розтягує навігацію на всю ширину екрану */
+    background-color: var(--color-black);
+    z-index: 999; /* Забезпечує, щоб меню було зверху всіх інших елементів */
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: var(--color-black);
+    width: 100%; 
+    position: absolute; /* Абсолютне позиціювання для керування розташуванням */
+    top: 100%; /* Встановлює меню під навігацією */
+    left: 0; /* Вирівнює меню з лівим краєм навігації */
+    border-radius: 10px; /* Закруглює кути меню */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Додає тінь до меню */
+  }
+
+  nav ul.show {
+    display: flex;
+    top: 80px;
+     
+  }
+
+  nav ul li {
+    width: 100%;
+    height: auto; /* Робить елементи меню шириною в 100% */
+    text-align: center;
+  }
+
+  nav ul li:last-child {
+    border-bottom: none; /* Вимикає роздільник для останнього елемента меню */
+  }
+
+  nav ul li .dropdown-content {
+    position: relative;
+    transform: translateX(0);
+    top: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: var(--color-black); /* Фон для випадаючого меню */
+  }
+
+  nav ul li .dropdown-content.show {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Стилі бургер-меню */
+
+  /* Стилі для бургер-меню */
+  .burger-menu {
+    position: absolute;
+    top: 20px; /* Відстань від верхнього краю */
+    right: 40px; /* Відстань від правого краю */
+    z-index: 1001; /* Забезпечує, щоб бургер-меню було зверху хедера */
+  }
+
+  .burger-bar {
+    width: 35px;
+    height: 4px;
+    background-color: var(--color-gray-4);
+    border-radius: 5px;
+    margin: 7px 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .burger-menu.open .burger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger-menu.open .burger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-menu.open .burger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
